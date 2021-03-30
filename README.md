@@ -10,8 +10,8 @@ Both charts need to be installed.
 
 ## Prerequisites
 
-- Kubernetes 1.12+
-- Helm 2.11+
+- Kubernetes 1.18+
+- Helm 3.4+
 - Persistent volume provisioner support in the underlying infrastructure
 
 ## Add the repository
@@ -43,8 +43,9 @@ mongodb:
 ```
 
 
+
 ```bash
-helm install -f config.yaml -n botfront --namespace botfront botfront/botfront
+helm install botfront -f config.yaml  --namespace botfront botfront/botfront --create-namespace
 ```
 
 Upgrading:
@@ -79,7 +80,7 @@ action_endpoint:
 tracker_store:
   store_type: rasa_addons.core.tracker_stores.AnalyticsTrackerStore
   # The URL below might be different if you installed Botfront in another namespace.
-  url: 'http://botfront-api-service.botfront'
+  url: 'http://botfront-webhooks-service.botfront'
   project_id: 'bf'
 
 3a. If using Rasa Webchat Open Source, set the following credentials:
@@ -112,7 +113,7 @@ helm upgrade -f values-project.yaml my-project --namespace botfront-project botf
 
 | Parameter                        | Description                                                                                   | Default                 |
 |----------------------------------|-----------------------------------------------------------------------------------------------|-------------------------|
-| **`botfront.version`**           | Botfront API Docker image                                                                     | `v0.23.0`                |
+| **`botfront.version`**           | Botfront API Docker image                                                                     | `v1.0.3`               |
 | **`botfront.app.image.name`**    | Botfront Docker image                                                                         | `botfront/botfront`     |
 | **`botfront.app.host`**          | Botfront host (e.g botfront.your-domain.com)                                                  | `nil`                   |
 | **`botfront.app.graphQLKey`**    | Key to protect the GraphQL API                                                                | `nil`                   |
@@ -131,7 +132,8 @@ helm upgrade -f values-project.yaml my-project --namespace botfront-project botf
 | `projectId`                           | ProjectId                                                                                                           | `bf`                                    |
 | `botfront.graphQLEndpoint`            | Should have the form `http://<botfront-service>.<botfront-namespace>/graphql`                                       | `nil`                                   |
 | `botfront.graphQLKey`                 | Botfront GraphQL API key                                                                                            | `nil`                                   |
-| `rasa.image`                          | Rasa image                                                                                                          | `botfront/rasa-for-botfront:1.9.0-bf.5` |
+| `rasa.image`                          | Rasa image                                                                                                          | `botfront/rasa-for-botfront:2.2.5-bf.5` |
+| `rasa.authToken`                      | Rasa [authentication token](https://rasa.com/docs/rasa/http-api/#token-based-auth)                                  | `nil`                                   |
 | `ingress.host`                        | Rasa instance host                                                                                                  | `nil`                                   |
 | `ingress.tlsSecretName`               | Name of the secret containing the certificate                                                                       | `nil`                                   |
 | `ingress.nginx.enableSessionAffinity` | enable sticky session see [Working with multiple rasa instances](#working-with-multiple-rasa-instances) for details | `true`                                  |
@@ -144,6 +146,7 @@ helm upgrade -f values-project.yaml my-project --namespace botfront-project botf
 |------------------------|-------------------------------|----------------------------|
 | **`duckling.enabled`** | Enable Duckling in this chart | `true`                     |
 | **`botfront.image`**   | Duckling image                | `botfront/duckling:latest` |
+
 
 ## MongoDB parameters
 
@@ -185,27 +188,6 @@ Mongo Express is a web-based client for MongoDB. You can optionally add Mongo Ex
 
 **Important**
 If you are using the provided MongoDB deployment, `mongodb.mongodbHost` must follow the following pattern: `<release-name>-mongodb-service.<namespace>`
-
-
-## Authenticating to Botfront private repo (Enterprise Edition Customers)
-
-Once you obtain your `key.json` file:
-
-1. Create a `docker-registry` secret in your cluster
-```bash
-kubectl create secret docker-registry gcr-json-key \
-  --docker-server=https://gcr.io \
-  --docker-username=_json_key \
-  --docker-password="$(cat key.json)" \
-  --namespace botfront
-```
-
-2. Patch the `default` service account (or the service account pulling images in your pods) **in the namespace Botfront is deployed**.
-```
-kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "gcr-json-key"}]}' --namespace botfront
-```
-
-3. Set `botfront.imagePullSecret` to `gcr-json-key`
 
 
 ## Scaling Rasa instances
@@ -254,3 +236,23 @@ lock_store:
 This is enabled by default.
 If you are using a lockstore, you will need to disable it or the lockstore serve it purpose.
 in your rasa values set `ingress.nginx.enableSessionAffinity to `false`
+
+### Pulling from a CGP private registry
+
+Obtain your `key.json` file:
+
+1. Create a `docker-registry` secret in your cluster
+```bash
+kubectl create secret docker-registry gcr-json-key \
+  --docker-server=https://gcr.io \
+  --docker-username=_json_key \
+  --docker-password="$(cat key.json)" \
+  --namespace botfront
+```
+
+2. Patch the `default` service account (or the service account pulling images in your pods) **in the namespace Botfront is deployed in**.
+```
+kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "gcr-json-key"}]}' --namespace botfront
+```
+
+3. Set `botfront.imagePullSecret` to `gcr-json-key`

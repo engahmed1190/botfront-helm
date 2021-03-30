@@ -2,8 +2,153 @@ apiVersion: v1
 entries:
   botfront:
   - apiVersion: v1
+    appVersion: v1.0.3
+    created: "2021-03-03T09:00:45.468527-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.5.14
+    description: A Helm chart for Botfront
+    digest: 80860fc4499bf98e0854edd239636ded5db4df1809cfe4b09e68b2a4ebca61b1
+    name: botfront
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v1
+    appVersion: v1.0.0
+    created: "2021-03-03T09:00:45.462513-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.5.14
+    description: A Helm chart for Botfront
+    digest: 76b1ecbeabe70f1a410302664c42f04c53c8a067157dc9926326a05bd57f6d91
+    name: botfront
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v1
+    appVersion: v1.0.0-rc4
+    created: "2021-03-03T09:00:45.457165-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.5.14
+    description: A Helm chart for Botfront
+    digest: 25b8b531957780b22cbb1438808406052b00c0e066d38773ae8fc04df416895c
+    name: botfront
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-1.0.0-beta0.tgz
+    version: 1.0.0-beta0
+  - apiVersion: v1
+    appVersion: 0.27.2
+    created: "2021-03-03T09:00:45.451113-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.5.14
+    description: A Helm chart for Botfront
+    digest: 5cd4d8db9f8fa7ad979056bb3d7ffcc6e4349ac91d3df76d6ce85659630ceda4
+    name: botfront
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-0.5.2.tgz
+    version: 0.5.2
+  - apiVersion: v1
+    appVersion: 0.25.8
+    created: "2021-03-03T09:00:45.445356-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.5.14
+    description: A Helm chart for Botfront
+    digest: 68ad5caf3e2a0237c4129208ea9ce5151b32c243c59b1e876bb309aacbc16d5f
+    name: botfront
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-0.5.1.tgz
+    version: 0.5.1
+  - apiVersion: v1
+    appVersion: 0.25.3
+    created: "2021-03-03T09:00:45.44007-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.5.14
+    description: A Helm chart for Botfront
+    digest: 471597de70bfbdae14fd7780ff2ebeba34da2d7b55e4d1f90b32918eeb2736c2
+    name: botfront
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v1
     appVersion: 0.23.0
-    created: "2020-06-09T14:32:51.43917-04:00"
+    created: "2021-03-03T09:00:45.433918-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.5.14
     description: A Helm chart for Botfront
     digest: fda98983df7c93300489b423b93087ce05180ac3c8e59f923acf4b6c2bc32d9d
     name: botfront
@@ -12,7 +157,20 @@ entries:
     version: 0.4.3
   - apiVersion: v1
     appVersion: 0.23.0
-    created: "2020-06-09T14:32:51.432573-04:00"
+    created: "2021-03-03T09:00:45.428716-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.5.14
     description: A Helm chart for Botfront
     digest: f2aa345cb8b725bdc3c5a6a55f7a180dbf256703e6d635477354bd6c4d455a96
     name: botfront
@@ -21,16 +179,38 @@ entries:
     version: 0.4.2
   - apiVersion: v1
     appVersion: 0.22.0
-    created: "2020-06-09T14:32:51.428074-04:00"
+    created: "2021-03-03T09:00:45.422866-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.5.14
     description: A Helm chart for Botfront
-    digest: eb5cbc3d81e915109321f2b2108739c35de842934b63ab078d2651f44b42843b
+    digest: acc638eb86623f0858044d472c0fb29c4681c681d663cdf8cc38869ec53a4924
     name: botfront
     urls:
     - https://botfront.github.io/botfront-helm/charts/botfront-0.4.1.tgz
     version: 0.4.1
   - apiVersion: v1
     appVersion: 0.22.0
-    created: "2020-06-09T14:32:51.423693-04:00"
+    created: "2021-03-03T09:00:45.416846-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
     description: A Helm chart for Botfront
     digest: 7abdf078bd7206b0ab3326aa057b632d5b12986ccbb89f9a22f1925f66d81123
     name: botfront
@@ -39,7 +219,16 @@ entries:
     version: 0.4.0
   - apiVersion: v1
     appVersion: 0.21.4
-    created: "2020-06-09T14:32:51.420686-04:00"
+    created: "2021-03-03T09:00:45.413109-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
     description: A Helm chart for Botfront
     digest: 0f6f2be2a69d2afd60305df0fd8ae406ade52858faa893d3c3e53f5281a870fe
     name: botfront
@@ -48,7 +237,16 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: 0.20.3
-    created: "2020-06-09T14:32:51.417743-04:00"
+    created: "2021-03-03T09:00:45.408405-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
     description: A Helm chart for Botfront
     digest: 73a876c23657877a2c457ab67e85303a20f8a4197443f629f1d76003f1c7ee71
     name: botfront
@@ -57,7 +255,16 @@ entries:
     version: 0.2.4
   - apiVersion: v1
     appVersion: 0.20.3
-    created: "2020-06-09T14:32:51.415044-04:00"
+    created: "2021-03-03T09:00:45.404169-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
     description: A Helm chart for Botfront
     digest: 5796a6b3e4e29dd0ee01eb0f78e0571f584a2e85aa67d3ae3dce90fd9029afc2
     name: botfront
@@ -66,7 +273,16 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: 0.20.2
-    created: "2020-06-09T14:32:51.412245-04:00"
+    created: "2021-03-03T09:00:45.399762-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
     description: A Helm chart for Botfront
     digest: 90a6ef6a8f07ce0cc952f2ff6e53e66f46a15e5530fb1f7fc5a3a91d5c1c6cbc
     name: botfront
@@ -75,7 +291,16 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: 0.20.0
-    created: "2020-06-09T14:32:51.408987-04:00"
+    created: "2021-03-03T09:00:45.394393-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
     description: A Helm chart for Botfront
     digest: d00074771675033b453a45f591388cd646e0b6762ab3d2caa49cd52effc3d685
     name: botfront
@@ -84,7 +309,16 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 0.20.0
-    created: "2020-06-09T14:32:51.406141-04:00"
+    created: "2021-03-03T09:00:45.389984-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
     description: A Helm chart for Botfront
     digest: 289aa2ed24837bf5e8e5cd34659f7a34469f6556ec458df5996a53ac78d1fe0c
     name: botfront
@@ -93,7 +327,16 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-06-09T14:32:51.403533-04:00"
+    created: "2021-03-03T09:00:45.384583-05:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 7.8.6
+    - condition: mongo-express.enabled
+      name: mongo-express
+      repository: https://cowboysysop.github.io/charts/
+      version: 1.0.1
     description: A Helm chart for Botfront
     digest: b02e860be5a8e44303ac07ba46abd6f31ce70a9f1030764692e1ba2ed9f8c529
     name: botfront
@@ -102,8 +345,62 @@ entries:
     version: 0.1.0
   botfront-project:
   - apiVersion: v1
+    appVersion: v1.0.3
+    created: "2021-03-03T09:00:45.476676-05:00"
+    description: A Helm chart for Botfront projects
+    digest: 1f4bfbcbaead3740accfb9e2777226f0f13effd94ca0e89d638e89b5e5915999
+    name: botfront-project
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-project-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v1
+    appVersion: v1.0.0
+    created: "2021-03-03T09:00:45.476111-05:00"
+    description: A Helm chart for Botfront projects
+    digest: 2c0716882023427ca4673e250c688559d351284fc1703b987349fb45c1143d26
+    name: botfront-project
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-project-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v1
+    appVersion: v1.0.0-rc4
+    created: "2021-03-03T09:00:45.474906-05:00"
+    description: A Helm chart for Botfront projects
+    digest: dc87c371218d0420398743cc254e3c1b7fc3038a8b21b811f88093aa15ca6fcb
+    name: botfront-project
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-project-1.0.0-beta0.tgz
+    version: 1.0.0-beta0
+  - apiVersion: v1
+    appVersion: 0.27.2
+    created: "2021-03-03T09:00:45.474347-05:00"
+    description: A Helm chart for Botfront projects
+    digest: d316d1b61864dcf50e222cf08d330ae4a91db5bc8c2f5a68ad9059f3d2dd9bec
+    name: botfront-project
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-project-0.5.2.tgz
+    version: 0.5.2
+  - apiVersion: v1
+    appVersion: 0.25.8
+    created: "2021-03-03T09:00:45.473808-05:00"
+    description: A Helm chart for Botfront projects
+    digest: 5d1cd3e3234c07093196f562d43d15e41172fcf279821f2f1977899c27b22c34
+    name: botfront-project
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-project-0.5.1.tgz
+    version: 0.5.1
+  - apiVersion: v1
+    appVersion: 0.25.3
+    created: "2021-03-03T09:00:45.4733-05:00"
+    description: A Helm chart for Botfront projects
+    digest: 6663ec34bf5782c2079798c5925f46dc61fbaf880b834b129db1693e5c5d22d5
+    name: botfront-project
+    urls:
+    - https://botfront.github.io/botfront-helm/charts/botfront-project-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v1
     appVersion: 0.23.0
-    created: "2020-06-09T14:32:51.441442-04:00"
+    created: "2021-03-03T09:00:45.47281-05:00"
     description: A Helm chart for Botfront projects
     digest: 274cfb3d79fef6fceced8eb1c0b5793cdafd1ed4d6fad0cd6e2dcb7f7092c16e
     name: botfront-project
@@ -112,7 +409,7 @@ entries:
     version: 0.4.3
   - apiVersion: v1
     appVersion: 0.23.0
-    created: "2020-06-09T14:32:51.441184-04:00"
+    created: "2021-03-03T09:00:45.472364-05:00"
     description: A Helm chart for Botfront projects
     digest: a046262c22a4cfefec988b76904aaae9b9962a6fa788c27a36d0f5a961bac3a1
     name: botfront-project
@@ -121,16 +418,16 @@ entries:
     version: 0.4.2
   - apiVersion: v1
     appVersion: 0.22.0
-    created: "2020-06-09T14:32:51.440934-04:00"
+    created: "2021-03-03T09:00:45.471885-05:00"
     description: A Helm chart for Botfront projects
-    digest: a7a70391f1155216f7bdcc0838159a7820c6aade9a50245e8ec203e7eb2d09d6
+    digest: 83dd0f18ce01dbe4f00e63292017936ee30c1f99121f1709f9b9cd740c5bccc0
     name: botfront-project
     urls:
     - https://botfront.github.io/botfront-helm/charts/botfront-project-0.4.1.tgz
     version: 0.4.1
   - apiVersion: v1
     appVersion: 0.22.0
-    created: "2020-06-09T14:32:51.440675-04:00"
+    created: "2021-03-03T09:00:45.471406-05:00"
     description: A Helm chart for Botfront projects
     digest: 57d0538d46b7e1becb689502833eb696aabad1fcac5d5cca89efec7e8c991965
     name: botfront-project
@@ -139,7 +436,7 @@ entries:
     version: 0.4.0
   - apiVersion: v1
     appVersion: 0.21.4
-    created: "2020-06-09T14:32:51.440432-04:00"
+    created: "2021-03-03T09:00:45.47097-05:00"
     description: A Helm chart for Botfront projects
     digest: ff44923bb838b174cfe4aa6f383e7df8ba448d95a2dc7eaf0c1e5145ccf825b9
     name: botfront-project
@@ -148,7 +445,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: 0.20.3
-    created: "2020-06-09T14:32:51.440195-04:00"
+    created: "2021-03-03T09:00:45.470493-05:00"
     description: A Helm chart for Botfront projects
     digest: 579590836bd77ca0f6d5d67039ed2f62fe25a78c454fdef92b145536204a70b4
     name: botfront-project
@@ -157,7 +454,7 @@ entries:
     version: 0.2.4
   - apiVersion: v1
     appVersion: 0.20.3
-    created: "2020-06-09T14:32:51.439964-04:00"
+    created: "2021-03-03T09:00:45.470005-05:00"
     description: A Helm chart for Botfront projects
     digest: 6402238c2eacd0324550253110f3634f0c5c2f2a57bc3556051bac232ce067d6
     name: botfront-project
@@ -166,7 +463,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: 0.20.2
-    created: "2020-06-09T14:32:51.439711-04:00"
+    created: "2021-03-03T09:00:45.469529-05:00"
     description: A Helm chart for Botfront projects
     digest: dce648653fcd81d2d8993a0e06c33b87abfc0c98d33e21999544359e20cf6fac
     name: botfront-project
@@ -175,11 +472,11 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: 0.20.0
-    created: "2020-06-09T14:32:51.439429-04:00"
+    created: "2021-03-03T09:00:45.469015-05:00"
     description: A Helm chart for Botfront projects
     digest: 909aef686cce1f1e6209479f3d4284b9909ba92a89df785b135f4e3300314430
     name: botfront-project
     urls:
     - https://botfront.github.io/botfront-helm/charts/botfront-project-0.2.0.tgz
     version: 0.2.0
-generated: "2020-06-09T14:32:51.398564-04:00"
+generated: "2021-03-03T09:00:45.379587-05:00"

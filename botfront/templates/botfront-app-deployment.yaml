@@ -44,14 +44,23 @@ spec:
               key: API_KEY
               name: {{ .Release.Name }}-secrets
         {{- end }}
+        {{- if .Values.botfront.licenseKey }}
+        - name: LICENSE_KEY
+          valueFrom:
+            secretKeyRef:
+              key: LICENSE_KEY
+              name: {{ .Release.Name }}-secrets
+        {{- end }}
         - name: PORT
           value: "3000"
         envFrom:
         - configMapRef:
             name: {{ .Release.Name }}-app-config
             optional: false
-        image: {{ .Values.botfront.app.image.name }}:{{ .Values.botfront.version }}
-        imagePullPolicy: IfNotPresent
+        image: {{ .Values.botfront.app.image.name }}:{{ .Values.botfront.app.version }}
+        {{- if .Values.botfront.app.imagePullPolicy }}
+        imagePullPolicy: {{ .Values.botfront.app.imagePullPolicy }}
+        {{- end }}
         name: {{ .Release.Name }}-app
         ports:
         - containerPort: 3000

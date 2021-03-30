@@ -10,8 +10,15 @@ projectId: bf
 debug: true
 
 rasa:
-  image: botfront/rasa-for-botfront:v1.9.0-bf.7
-  initialProbeDelay: 30
+  image: botfront/rasa-for-botfront:v2.2.5-bf.5
+  authToken: 
+  livenessProbe:
+    initialProbeDelay: 30
+    periodSeconds: 10
+    failureThreshold: 10
+  securityContext:
+    runAsUser: 0
+    runAsGroup: 0
 
 botfront:
   graphQLEndpoint: http://botfront-app-service.botfront/graphql
@@ -50,14 +57,18 @@ ingress:
 
   # If nginx.enabled is false, the following annotations will be added to the Ingress. This is ignored it nginx.enabled is true.
   annotations: {}
-  host:
-  tlsSecretName:
 
-resources:
-  limits:
-    cpu: "2"
-    memory: 2Gi
-  requests:
-    cpu: 250m
-    memory: 512Mi
-
+environments:
+  development:
+    debug: true
+    host: rasa.botfront.local
+    path: /
+    tlsSecretName:
+    envVars:
+    resources:
+      limits:
+        cpu: "2"
+        memory: 2Gi
+      requests:
+        cpu: 250m
+        memory: 512Mi

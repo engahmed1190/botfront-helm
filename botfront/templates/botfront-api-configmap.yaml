@@ -1,9 +1,9 @@
+{{- if .Values.botfront.webhooks.enabled -}}
 apiVersion: "v1"
 kind: "ConfigMap"
 metadata:
   name: {{ .Release.Name }}-api-config
 data:
-  DEPLOYMENT_ENVIRONMENT: prod
   PORT: "8080"
   APPLICATION_APP_LOG_TRANSPORT: {{ .Values.botfront.logs.transport | quote }}
   APPLICATION_APP_LOG_LEVEL: {{ .Values.botfront.logs.level | quote }}
@@ -18,3 +18,4 @@ data:
   CLUSTER_ENVIRONMENT: {{ .Values.botfront.cloud.deploymentEnvironment | quote }}
   {{- end }}
   {{- end }}
+{{ end }}
